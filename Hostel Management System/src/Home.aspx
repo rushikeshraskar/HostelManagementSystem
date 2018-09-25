@@ -69,15 +69,15 @@ img {vertical-align: middle;}
 <div class="slideshow-container">
 
 <div class="mySlides fade">
-  <img src="img1.jpg" style="width:60%">
+  <img src="Images/img1.jpg" style="width:60%">
 </div>
 
 <div class="mySlides fade">
-  <img src="img2.jpg" style="width:60%">
+  <img src="Images/img2.jpg" style="width:60%">
 </div>
 
 <div class="mySlides fade">
-  <img src="img3.jpg" style="width:60%">
+  <img src="Images/img3.jpg" style="width:60%">
 </div>
 </div>
 <br>

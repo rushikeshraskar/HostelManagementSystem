@@ -23,12 +23,12 @@
 	</ul>
 </h3><br><br><br><br><br><br>
   <marquee behavior="scroll" direction="left" >
-    <img src="fac1.jpg" width="400" height="300" alt="Natural" />
-    <img src="fac2.jpg" width="400" height="300" alt="Natural" />
-    <img src="fac3.jpg" width="400" height="300" alt="Natural" />
-    <img src="fac4.jpg" width="400" height="300" alt="Natural" />
-    <img src="fac5.jpg" width="400" height="300" alt="Natural" />
-    <img src="fac6.jpg" width="400" height="300" alt="Natural" />
+    <img src="Images/fac1.jpg" width="400" height="300" alt="Natural" />
+    <img src="Images/fac2.jpg" width="400" height="300" alt="Natural" />
+    <img src="Images/fac3.jpg" width="400" height="300" alt="Natural" />
+    <img src="Images/fac4.jpg" width="400" height="300" alt="Natural" />
+    <img src="Images/fac5.jpg" width="400" height="300" alt="Natural" />
+    <img src="Images/fac6.jpg" width="400" height="300" alt="Natural" />
   </marquee>
     </form>
 </body>
