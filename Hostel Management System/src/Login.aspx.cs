@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Data.SqlClient;
 
 public partial class src_Login : System.Web.UI.Page
 {
@@ -16,13 +17,14 @@ public partial class src_Login : System.Web.UI.Page
     {
         String uname = String.Format("{0}", Request.Form["uname"]);
         String pword = String.Format("{0}", Request.Form["pword"]);
-        String connectionString = "Data Source = (LocalDB)\\MSSQLLocalDB; AttachDbFilename = " + "D:\\workSpaces\\studio2017\\repos\\Hostel Management System Rushi\\Hostel Management System Rushi\\App_Data\\Database.mdf" + "; Integrated Security = True";
-        System.Data.SqlClient.SqlConnection con = new System.Data.SqlClient.SqlConnection(connectionString);
+        String connectionString = "Data Source = (LocalDB)\\MSSQLLocalDB; AttachDbFilename = " + "D:\\workSpaces\\studio2017\\repos\\Hostel Management System\\Hostel Management System\\App_Data\\Database.mdf" + "; Integrated Security = True";
+
+        SqlConnection con = new SqlConnection(connectionString);
         con.Open();
         Console.WriteLine("connection opened successfully");
-        System.Data.SqlClient.SqlCommand cmd = new System.Data.SqlClient.SqlCommand("select * from Users where uname='" + uname + "' and pword='" + pword + "'", con);
+        SqlCommand cmd = new SqlCommand("select * from Users where uname='" + uname + "' and pword='" + pword + "'", con);
 
-        System.Data.SqlClient.SqlDataReader reader = cmd.ExecuteReader();
+        SqlDataReader reader = cmd.ExecuteReader();
 
         if (reader.Read())
         {

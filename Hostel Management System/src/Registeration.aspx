@@ -55,7 +55,6 @@
             Join Date<input type="Date" id="jdate" name="jdate" required>
             </div>
             <asp:button type="Submit" runat="server" onclick="SubmitForm"  name="register" id="register" text="Register" />
-            
         </div>
     </form>
 </body>
