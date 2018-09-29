@@ -5,7 +5,6 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="css3.css">
 <style>
 * {box-sizing: border-box;}
 body {font-family: Verdana, sans-serif;}
