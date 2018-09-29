@@ -1,4 +1,4 @@
-﻿#form1 {
+﻿#regForm{
     margin: auto;
     height: 700px;
     width: 600px;
@@ -8,12 +8,16 @@
     font-family: "Cambria";
     border-radius: 4px;
     text-align: center;
-    border: 4px solid #808080;
+    
 }
 body{
     
 }
+
 input, textarea {
     margin-left: 20px;
     margin-top: 10px;
+}
+form{
+
 }
