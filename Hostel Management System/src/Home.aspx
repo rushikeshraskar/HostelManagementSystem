@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="src/css/home.css" rel="stylesheet"/>
+    <link href="css/home.css" rel="stylesheet"/>
 </head>
 <body>
     <form id="form1" runat="server">
