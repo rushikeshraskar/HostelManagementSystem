@@ -5,31 +5,31 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="css/home.css" rel="stylesheet"/>
+    <link href="src/css/home.css" rel="stylesheet"/>
 </head>
 <body>
     <form id="form1" runat="server">
       <h1>Hostel Management System</h1>
-<a href="Login.aspx">Visitor's Login</a>
-<a href="Login.aspx">Owner's Login</a>
-<a href="BrowseRooms.aspx">Browse Rooms</a>
-<a href="ContactUs.aspx">ContactUs</a>
-<a href="AboutUs.aspx">AboutUs</a>
+<a href="src/Login.aspx">Visitor's Login</a>
+<a href="src/Login.aspx">Owner's Login</a>
+<a href="src/BrowseRooms.aspx">Browse Rooms</a>
+<a href="src/ContactUs.aspx">ContactUs</a>
+<a href="src/AboutUs.aspx">AboutUs</a>
 <br>
 
 
 <div class="slideshow-container">
 
 <div class="mySlides fade">
-  <img src="Images/img1.jpg" style="width:60%">
+  <img src="src/Images/img1.jpg" style="width:60%">
 </div>
 
 <div class="mySlides fade">
-  <img src="Images/img2.jpg" style="width:60%">
+  <img src="src/Images/img2.jpg" style="width:60%">
 </div>
 
 <div class="mySlides fade">
-  <img src="Images/img3.jpg" style="width:60%">
+  <img src="src/Images/img3.jpg" style="width:60%">
 </div>
 </div>
 <br>
