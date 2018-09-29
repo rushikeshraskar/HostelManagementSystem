@@ -8,9 +8,31 @@ using System.Data.SqlClient;
 
 public partial class src_Registeration : System.Web.UI.Page
 {
+    private SqlConnection con;
+
+    
     protected void Page_Load(object sender, EventArgs e)
     {
 
+        string ApplicationPath = AppDomain.CurrentDomain.BaseDirectory;
+        String DatabasePath = ApplicationPath + "App_Data\\Database.mdf";
+        String connectionString = "Data Source = (LocalDB)\\MSSQLLocalDB; AttachDbFilename = " + DatabasePath+ "; Integrated Security = True";
+        con = new SqlConnection(connectionString);
+        con.Open();
+    }
+    private int getLastResidentId()
+    {
+        int id = 1;
+        String sql = "select max(rid) from Resident";
+        SqlCommand cmd = new SqlCommand(sql,con);
+        SqlDataReader reader = cmd.ExecuteReader();
+        if (reader.Read())
+        {
+             Int32.TryParse(reader.GetValue(0).ToString(),out id);
+        }
+        reader.Close();
+
+        return id;
     }
     protected void SubmitForm(object sender, EventArgs e)
     {
@@ -25,16 +47,14 @@ public partial class src_Registeration : System.Web.UI.Page
         String uname = String.Format("{0}", Request.Form["uname"]);
         String pword = String.Format("{0}", Request.Form["pword"]);
         String jdate = String.Format("{0}", Request.Form["jdate"]);
-
-        String connectionString = "Data Source = (LocalDB)\\MSSQLLocalDB; AttachDbFilename = " + "D:\\workSpaces\\studio2017\\repos\\Hostel Management System\\Hostel Management System\\App_Data\\Database.mdf" + "; Integrated Security = True";
         
-        String sql = "insert into Resident(rid,fname,lname,cno,email,occupation,dob,addr,uname,password,jdate)values('3',@Fname,@Lname,@Cno,@Email,@Occupation,@Dob,@Addr,@Uname,@Pword,@Jdate);";
-       // Console.WriteLine(sql);
+        int Newid = getLastResidentId()+1;
         
-        SqlConnection con = new SqlConnection(connectionString);
-        con.Open();
+        String sql = "insert into Resident(rid,fname,lname,cno,email,occupation,dob,addr,uname,password,jdate)values(@Rid,@Fname,@Lname,@Cno,@Email,@Occupation,@Dob,@Addr,@Uname,@Pword,@Jdate);";
+        
         SqlCommand cmd = new SqlCommand(sql, con);
-        
+
+        cmd.Parameters.AddWithValue("@Rid", Newid);
         cmd.Parameters.AddWithValue("@Fname",fname.Trim());
         cmd.Parameters.AddWithValue("@Lname", lname.Trim());
         cmd.Parameters.AddWithValue("@Cno", cno.Trim());
@@ -46,7 +66,6 @@ public partial class src_Registeration : System.Web.UI.Page
         cmd.Parameters.AddWithValue("@Pword", pword.Trim());
         cmd.Parameters.AddWithValue("@Jdate", jdate.Trim());
 
-        
         System.Diagnostics.Debug.WriteLine(fname + " " + lname + " " + cno + " " + email + " " + occupation + " " + dob + " " + addr + " " + uname + " " + pword + " " + jdate);  
         int recordAffected = cmd.ExecuteNonQuery();  
         con.Close();
