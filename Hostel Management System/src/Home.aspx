@@ -5,62 +5,14 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
-* {box-sizing: border-box;}
-body {font-family: Verdana, sans-serif;}
-.mySlides {display: none;}
-img {vertical-align: middle;}
-
-/* Slideshow container */
-.slideshow-container {
-  max-width: 1000px;
-  position: relative;
-  margin: auto;
-}
-
-/* The dots/bullets/indicators */
-.dot {
-  height: 15px;
-  width: 15px;
-  margin: 0 2px;
-  background-color: #bbb;
-  border-radius: 50%;
-  display: inline-block;
-  transition: background-color 0.6s ease;
-}
-
-.active {
-  background-color: #717171;
-}
-
-/* Fading animation */
-.fade {
-  -webkit-animation-name: fade;
-  -webkit-animation-duration: 1.5s;
-  animation-name: fade;
-  animation-duration: 1.5s;
-}
-
-@-webkit-keyframes fade {
-  from {opacity: .4} 
-  to {opacity: 1}
-}
-
-@keyframes fade {
-  from {opacity: .4} 
-  to {opacity: 1}
-}
-
-
-@media only screen and (max-width: 300px) {
-  .text {font-size: 11px}
-}
-</style>
+    <link href="css/home.css" rel="stylesheet"/>
 </head>
 <body>
     <form id="form1" runat="server">
       <h1>Hostel Management System</h1>
 <a href="Login.aspx">Visitor's Login</a>
+<a href="Login.aspx">Owner's Login</a>
+<a href="BrowseRooms.aspx">Browse Rooms</a>
 <a href="ContactUs.aspx">ContactUs</a>
 <a href="AboutUs.aspx">AboutUs</a>
 <br>
