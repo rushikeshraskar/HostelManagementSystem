@@ -29,7 +29,7 @@
 </head>
 <body>
     
-    <form id="regForm" runat="server" onsubmit="return validate(fname.value,lname.value,cno.value,email.value,occupation.value,dob.value,addr.value,uname.value,pword.value,repword.value,jdate.value)">
+    <form id="regForm" runat="server" onsubmit="return validate(fname.value,lname.value,cno.value,email.value,occupation.value,dob.value,addr.value,uname.value,pword.value,repword.value,jdate.value">
     <h1>Registeration Form</h1>    
         <div>
             <div>    
@@ -48,7 +48,7 @@
                 College/Company Name<input type="text" id="occupation" name="occupation" />
             </div>
             <div>
-                Date of Birth*<input type="Date" id="dob" name="dob" required="required"/>
+                Date of Birth*<input type="date" id="dob" name="dob" required="required"/>
             </div>
             <div>
             Address<textarea id="addr" name="addr" required="required"></textarea>
@@ -66,13 +66,17 @@
             Join Date<input type="date" id="jdate" name="jdate" required="required"/>
             </div>
             <div>
-            Aadhar Card*<input type="file" id="aadhar" name="aadhar" required="required"/>
+            Aadhar Card*
+                <asp:FileUpload ID="aadhar" runat="server" />
             </div>
             <div>
-            Pan Card*<input type="file" id="pan" name="pan" required="required"/>
+            Pan Card*
+            <asp:FileUpload ID="pan" runat="server" />
             </div>
             <div>
-            I-Card<input type="file" id="icard" name="icard"/>
+            I-Card
+           
+                <asp:FileUpload ID="icard" runat="server" />
             </div>
             <asp:button type="Submit" runat="server" onclick="SubmitForm"  name="register" id="register" text="Register" />
         </div>
