@@ -6,7 +6,7 @@
 <head runat="server">
     <script src="bootstrap/bootstrap.js"></script>
     <link href="bootstrap/bootstrap.css" rel="stylesheet"/>
-    <link href="css/css2.css" rel="stylesheet"/>
+    <link href="css/login.css" rel="stylesheet"/>
     <script>
         function validate(uname, pword) {
             if (uname.length == 0 || pword.length == 0) {
