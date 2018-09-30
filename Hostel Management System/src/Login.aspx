@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <script src="bootstrap/bootstrap.js"></script>
-    <link href="bootstrap/bootstrap.css" rel="stylesheet"/>
+    
     <link href="css/login.css" rel="stylesheet"/>
     <script>
         function validate(uname, pword) {
