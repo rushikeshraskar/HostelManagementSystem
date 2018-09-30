@@ -10,4 +10,20 @@ body {
     font-family: "Cambria";
     border-radius: 4px;
     text-align: center;
+
 }
+.radioButtonList {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+    .radioButtonList.horizontal li {
+        display: inline;
+    }
+
+    .radioButtonList label {
+        display: inline;
+    }
+
+

@@ -5,7 +5,6 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title></title>
-       <link href="bootstrap/bootstrap.css" rel="stylesheet"/>
     <link href="css/BrowseRooms.css" rel="stylesheet"/>
 </head>
 <body>
@@ -13,24 +12,38 @@
     <h1>BrowseRooms</h1>    
         <div>
             <div>    
-              For:<input type="radio" name="gender" value="male" checked="checked"> Boys&nbsp;&nbsp;&nbsp;&nbsp;
-               <input type="radio" name="gender" value="female"/> Girls<br/><br/>
+              For:
+                <asp:RadioButtonList ID="RadioButtonList1" runat="server" CssClass="radioButtonList" RepeatDirection="Horizontal" RepeatLayout="Flow" AutoPostBack="True"  OnSelectedIndexChanged="onGenderTypeChanged" Enabled="true">
+                    <asp:ListItem  Value="boys" Selected="True" Text="Boys"/>
+                    <asp:ListItem Value="girls" Text="Girls"/>
+                </asp:RadioButtonList>
+                <br/>
             </div>
             <div>  
-                Select Room Type: <input type="radio" name="roomType" value="single" checked="checked"/>Single&nbsp;&nbsp;&nbsp;&nbsp;
-                <input type="radio" name="roomType" value="double"/> Two Sharing&nbsp;&nbsp;&nbsp;&nbsp;
-                <input type="radio" name="roomType" value="triple"/>Three Sharing<br/><br/>
+                Select Room Type: 
+                    <asp:RadioButtonList ID="RadioButtonList2" runat="server" AutoPostBack="True"   CssClass="radioButtonList" RepeatDirection="Horizontal" RepeatLayout="Flow" OnSelectedIndexChanged="onRoomTypeChanged" Enabled="true">
+                <asp:ListItem  Value="single" Text="single" Selected="True"/>
+                <asp:ListItem  Value="double" Text="Two Sharing"/>
+                <asp:ListItem  Value="triple" Text="Three Sharing"/>
+                    </asp:RadioButtonList>
             </div>
               <div>   
-                Amount to Deposit: <br/><input type="text"  id="deposit" name="deposit" disabled="disabled"/><br/><br/>
-                Rent to Pay per month: <br/><input type="text"  id="rentPerM" name="rentPerM" disabled="disabled"/><br/><br/>
+                Amount to Deposit: <br/>
+                  <asp:TextBox ID="deposit" runat="server" Enabled="false"></asp:TextBox>
+                  <br/><br/>
+                
+                  Rent to Pay per month: <br/>
+                  <asp:TextBox ID="rentPerM" runat="server" Enabled="false"></asp:TextBox>
+                  <br/><br/>
             </div>
              <div>    
-                Available Rooms: <select name="availableRooms" form="form1">
-  <option value="1" selected="selected">RoomNo1</option>
-  <option value="2">RoomNo2</option>
-  <option value="3">RoomNo3</option>
-</select><br/><br/>
+                Available Rooms:
+                 <asp:DropDownList ID="availableRooms" runat="server">
+                     <asp:ListItem value="1" selected="True" Text="RoomNo1"></asp:ListItem>
+                     <asp:ListItem value="2"  Text="RoomNo2"></asp:ListItem>
+                     <asp:ListItem value="3"  Text="RoomNo3"></asp:ListItem>
+                 </asp:DropDownList>
+                 <br/><br/>
             </div>
 
             <input type="Submit" runat="server"  name="browseRooms" value="Submit" id="browseRooms" text="browseRooms" />
