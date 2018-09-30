@@ -32,7 +32,6 @@
   <option value="3">RoomNo3</option>
 </select><br/><br/>
             </div>
-
             <input type="Submit" runat="server"  name="browseRooms" value="Submit" id="browseRooms" text="browseRooms" />
         </div>
     </form>
