@@ -9,11 +9,26 @@ public partial class _Default : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-
+        RadioButtonList1.Items[0].Attributes.CssStyle.Add("margin-right", "50");
+        RadioButtonList1.Items[1].Attributes.CssStyle.Add("margin-right", "50");
+        RadioButtonList2.Items[0].Attributes.CssStyle.Add("margin-right", "50");
+        RadioButtonList2.Items[1].Attributes.CssStyle.Add("margin-right", "50");
+        RadioButtonList2.Items[2].Attributes.CssStyle.Add("margin-right", "50");
+        
     }
+     
     protected void SubmitForm(object sender, EventArgs e)
     {
-
+        //Response.Write("submit method called");
     }
-    
+    protected void onGenderTypeChanged(object sender, EventArgs e)
+    {
+        //Response.Write(RadioButtonList1.SelectedItem.Text);
+        
+    }
+    protected void onRoomTypeChanged(object sender, EventArgs e)
+    {
+        //Response.Write(RadioButtonList2.SelectedItem.Text);
+        
+    }
 }
