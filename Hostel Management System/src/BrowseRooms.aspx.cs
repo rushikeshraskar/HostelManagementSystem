@@ -20,11 +20,12 @@ public partial class _Default : System.Web.UI.Page
     protected void SubmitForm(object sender, EventArgs e)
     {
         //Response.Write("submit method called");
+
     }
     protected void onGenderTypeChanged(object sender, EventArgs e)
     {
         //Response.Write(RadioButtonList1.SelectedItem.Text);
-        
+        //
     }
     protected void onRoomTypeChanged(object sender, EventArgs e)
     {
