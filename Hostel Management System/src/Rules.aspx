@@ -25,6 +25,12 @@
             12. Please dont disturb others by using mobile phones at latenight.<br>
             </h3>
         </div>
+        <div>
+            <input type="checkbox" name="check1" id="check1">I agree with terms and conditions.
+        </div><br>
+        <div>
+            <input type="submit" value="Submit" id="agree" name="agree" />
+        </div>
     </form>
 </body>
 </html>
