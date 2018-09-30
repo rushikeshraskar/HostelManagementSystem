@@ -1,5 +1,6 @@
 ﻿@import url("../bootstrap/bootstrap.css");
-#regForm{
+
+body {
     margin: auto;
     height: 700px;
     width: 600px;
@@ -9,16 +10,4 @@
     font-family: "Cambria";
     border-radius: 4px;
     text-align: center;
-    
-}
-body{
-    
-}
-
-input, textarea {
-    margin-left: 20px;
-    margin-top: 10px;
-}
-form{
-
 }
