@@ -31,6 +31,7 @@
               <div>
             <input type="password" name="pword" id="pword" placeholder="Password" required/>
               </div>
+            <a href="Registeration.aspx">Create Account</a>
             <div>
             <asp:button type="Submit" runat="server" onclick="SubmitForm"  name="Login" id="Login" text="Login" />
                 </div>
