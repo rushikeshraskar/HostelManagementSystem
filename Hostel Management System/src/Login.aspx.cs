@@ -31,6 +31,7 @@ public partial class src_Login : System.Web.UI.Page
         if (reader.Read())
         {
             ScriptManager.RegisterStartupScript(this.Page, this.GetType(), "Show", "alert('Login Successful');", true);
+            Response.Redirect("BrowseRooms.aspx");
         }
         else
         {

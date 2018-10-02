@@ -117,6 +117,7 @@ public partial class src_Registeration : System.Web.UI.Page
         con.Close();
 
         ScriptManager.RegisterStartupScript(this.Page, this.GetType(), "Show", "alert('Data Saved');", true);
+                Response.Redirect("Login.aspx");
         }
 
         }
