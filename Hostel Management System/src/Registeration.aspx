@@ -6,7 +6,6 @@
 <head runat="server">
     <title>Visitor Registeration</title>
     <script src="bootstrap/bootstrap.js"></script>
-    <link href="bootstrap/bootstrap.css" rel="stylesheet"/>
     <link href="css/registeration.css" rel="stylesheet"/>
     <script>
         function validate(fname, lname, cno, email, occupation, dob, addr, uname, pword, repword, jdate) {

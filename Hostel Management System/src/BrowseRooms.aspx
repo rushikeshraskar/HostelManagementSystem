@@ -4,7 +4,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title></title>
+    <title>Browse Rooms</title>
     <link href="css/BrowseRooms.css" rel="stylesheet"/>
 </head>
 <body>
@@ -17,11 +17,12 @@
             <div>    
               For:
                 <asp:RadioButtonList ID="RadioButtonList1" runat="server" CssClass="radioButtonList" RepeatDirection="Horizontal" RepeatLayout="Flow" AutoPostBack="True"  OnSelectedIndexChanged="onGenderTypeChanged" Enabled="true">
-                    <asp:ListItem  Value="boys" Selected="True" Text="Boys"/>
-                    <asp:ListItem Value="girls" Text="Girls"/>
+                    <asp:ListItem  Value="male" Selected="True" Text="Boys"/>
+                    <asp:ListItem Value="female" Text="Girls"/>
                 </asp:RadioButtonList>
                 <br/>
             </div>
+            <br />
             <div>  
                 Select Room Type: 
                     <asp:RadioButtonList ID="RadioButtonList2" runat="server" AutoPostBack="True"   CssClass="radioButtonList" RepeatDirection="Horizontal" RepeatLayout="Flow" OnSelectedIndexChanged="onRoomTypeChanged" Enabled="true">
@@ -30,26 +31,14 @@
                 <asp:ListItem  Value="triple" Text="Three Sharing"/>
                     </asp:RadioButtonList>
             </div>
-              <div>   
-                Amount to Deposit: <br/>
-                  <asp:TextBox ID="deposit" runat="server" Enabled="false"></asp:TextBox>
-                  <br/><br/>
-                
-                  Rent to Pay per month: <br/>
-                  <asp:TextBox ID="rentPerM" runat="server" Enabled="false"></asp:TextBox>
-                  <br/><br/>
-            </div>
-             <div>    
-                Available Rooms:
-                 <asp:DropDownList ID="availableRooms" runat="server">
-                     <asp:ListItem value="1" selected="True" Text="RoomNo1"></asp:ListItem>
-                     <asp:ListItem value="2"  Text="RoomNo2"></asp:ListItem>
-                     <asp:ListItem value="3"  Text="RoomNo3"></asp:ListItem>
-                 </asp:DropDownList>
-                <br />
-            </div>
+
+              <asp:RadioButtonList ID="RadioButtonList3" runat="server" RepeatDirection="Vertical"  Enabled="true">
+               
+                  </asp:RadioButtonList>
+             
             <div>
                 <asp:Label ID="roomMsg" runat="server" Text="" ForeColor="Blue"></asp:Label>
+                
             </div>
                  <br/>
                  <br/>

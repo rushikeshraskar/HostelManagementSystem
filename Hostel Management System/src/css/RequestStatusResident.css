@@ -1,4 +1,13 @@
 ﻿@import url("../bootstrap/bootstrap.css");
-body {
 
+form {
+    margin: auto;
+    height: 700px;
+    width: 600px;
+    font-size: 20px;
+    background-color: #fff;
+    padding-left: 20px;
+    font-family: "Cambria";
+    border-radius: 4px;
+    text-align: center;
 }
