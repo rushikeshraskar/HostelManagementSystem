@@ -68,7 +68,7 @@ public partial class _Default : System.Web.UI.Page
     protected void SubmitForm(object sender, EventArgs e)
     {
         //Response.Write("submit method called");
-        getDataFromDB();
+        //getDataFromDB();
     }
     protected void onGenderTypeChanged(object sender, EventArgs e)
     {
@@ -78,6 +78,7 @@ public partial class _Default : System.Web.UI.Page
     protected void onRoomTypeChanged(object sender, EventArgs e)
     {
         //Response.Write(RadioButtonList2.SelectedItem.Text);
+        getDataFromDB();
     }
     protected void onRoomSelected(object sender, EventArgs e)
     {
