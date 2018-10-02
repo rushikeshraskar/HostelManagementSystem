@@ -8,8 +8,11 @@
     <link href="css/BrowseRooms.css" rel="stylesheet"/>
 </head>
 <body>
+    
+     
     <form id="form1" runat="server">
-    <h1>BrowseRooms</h1>    
+        <h1>BrowseRooms </h1>
+       <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Previous Request Status" CssClass="notificationBtn" />   
         <div>
             <div>    
               For:
@@ -43,8 +46,13 @@
                      <asp:ListItem value="2"  Text="RoomNo2"></asp:ListItem>
                      <asp:ListItem value="3"  Text="RoomNo3"></asp:ListItem>
                  </asp:DropDownList>
-                 <br/><br/>
+                <br />
             </div>
+            <div>
+                <asp:Label ID="roomMsg" runat="server" Text="" ForeColor="Blue"></asp:Label>
+            </div>
+                 <br/>
+                 <br/>
             <input type="Submit" runat="server"  name="browseRooms" value="Submit" id="browseRooms" text="browseRooms" />
         </div>
     </form>
