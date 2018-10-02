@@ -22,7 +22,8 @@ public partial class src_Login : System.Web.UI.Page
     {
         String uname = String.Format("{0}", Request.Form["uname"]);
         String pword = String.Format("{0}", Request.Form["pword"]);
-        
+        Session["userName"] = uname;
+
         SqlCommand cmd = new SqlCommand("select * from Users where uname='" + uname + "' and pword='" + pword + "'", con);
 
         SqlDataReader reader = cmd.ExecuteReader();

@@ -9,6 +9,9 @@ public partial class src_Rules : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-
+        if(Session["userName"]!=null)
+        {
+            Label1.Text = Session["userName"].ToString();
+        }
     }
 }
