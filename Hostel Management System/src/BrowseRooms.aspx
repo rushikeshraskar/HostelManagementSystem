@@ -9,8 +9,9 @@
 </head>
 <body>
     <asp:Image ID="Image1" runat="server" ImageAlign="left"  ImageUrl="Images/user.png" Height="50" Width="50"/><br> 
-    <asp:Label ID="Label1" runat="server"></asp:Label>
+    <asp:Label ID="Label1" runat="server"></asp:Label><br>
     <form id="form1" runat="server">
+    <asp:Button ID="logout" runat="server" OnClick="logout_click" Text="Logout"/>
         <h1>BrowseRooms </h1>
        <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Previous Request Status" CssClass="notificationBtn" />   
         <div>

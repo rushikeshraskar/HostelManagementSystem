@@ -18,7 +18,12 @@ public partial class _Default : System.Web.UI.Page
         Label1.Text = "Hello "+Session["userName"].ToString();
         
     }
-     
+     protected void logout_click(object sender, EventArgs e)
+    {
+        Session.Abandon();
+        Session.Clear();
+        Response.Redirect("Home.aspx");
+    }
     protected void SubmitForm(object sender, EventArgs e)
     {
         //Response.Write("submit method called");
