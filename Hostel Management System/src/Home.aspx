@@ -11,9 +11,7 @@
 <body>
     <form id="form1" runat="server">
       <h1>Hostel Management System</h1>
-<a href="src/Login.aspx">Visitor's Login</a>
-<a href="src/Login.aspx">Owner's Login</a>
-<a href="src/BrowseRooms.aspx">Browse Rooms</a>
+<a href="src/Login.aspx">Login</a>
 <a href="src/ContactUs.aspx">ContactUs</a>
 <a href="src/AboutUs.aspx">AboutUs</a>
 <br/>

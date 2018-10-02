@@ -7,8 +7,8 @@
     <title></title>
 </head>
 <body>
-    <form id="form1" runat="server">
-        <h1>RULES AND REGULATIONS</h1>
+    <h1>RULES AND REGULATIONS</h1>
+    <form ID="FormView1" runat="server">
         <div>
             <h3>
             1.Keep your room clean.<br>
@@ -24,13 +24,13 @@
             11.One key will be provided. But if it is lost then you have to buy new one.<br>
             12. Please dont disturb others by using mobile phones at latenight.<br>
             </h3>
-        </div>
         <div>
-            <input type="checkbox" name="check1" id="check1">I agree with terms and conditions.
+            <input type="checkbox" name="agree" id="agree" /> I agree with terms and conditions.
         </div><br>
         <div>
-            <input type="submit" value="Submit" id="agree" name="agree" />
+            <input type="submit" name="submit" id="submit" value="Submit" />
         </div>
+            </div>
     </form>
 </body>
 </html>
