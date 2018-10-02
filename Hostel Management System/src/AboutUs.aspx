@@ -8,7 +8,8 @@
 </head>
 <body>
     <form id="form1" runat="server">
-        <h1>We Facilitate:</h1>
+        <h1>About Us</h1>
+        <h2>We Facilitate:</h2>
 <h3>
 	<ul type="square">
 		<li>Free WiFi</li>
