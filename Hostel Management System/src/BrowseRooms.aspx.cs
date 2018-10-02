@@ -20,7 +20,7 @@ public partial class _Default : System.Web.UI.Page
 
         Label1.Text = "Hello "+Session["userName"].ToString();
 
-        getDataFromDB();
+    //    getDataFromDB();
     }
      protected void logout_click(object sender, EventArgs e)
     {
@@ -58,7 +58,6 @@ public partial class _Default : System.Web.UI.Page
     }
     private void loadDataToUI()
     {
-        
         foreach(RoomDataModel items in rooms)
         {
             ListItem dummy = new ListItem(items.getDispData(), items.myrno.ToString());
@@ -74,19 +73,21 @@ public partial class _Default : System.Web.UI.Page
     protected void onGenderTypeChanged(object sender, EventArgs e)
     {
         //Response.Write(RadioButtonList1.SelectedItem.Text);
-        //
         getDataFromDB();
     }
     protected void onRoomTypeChanged(object sender, EventArgs e)
     {
         //Response.Write(RadioButtonList2.SelectedItem.Text);
+    }
+    protected void onRoomSelected(object sender, EventArgs e)
+    {
         
     }
-     
+    
     protected void Button2_Click(object sender, EventArgs e)
     {
         ScriptManager.RegisterStartupScript(this.Page, this.GetType(), "Show", "alert('" + RadioButtonList3.SelectedValue.ToString() + "');", true);
-        Response.Write("Selected " + RadioButtonList3.SelectedItem.Text);
+        Response.Write("Selected " + RadioButtonList3.SelectedValue.ToString());
     }
 
     protected void Button1_Click(object sender, EventArgs e)

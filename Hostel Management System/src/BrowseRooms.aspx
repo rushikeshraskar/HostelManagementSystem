@@ -33,7 +33,7 @@
                     </asp:RadioButtonList>
             </div>
             <div>
-              <asp:RadioButtonList ID="RadioButtonList3" runat="server" RepeatDirection="Vertical"  Enabled="true" CssClass="radioButtonList" >
+              <asp:RadioButtonList ID="RadioButtonList3" runat="server" RepeatDirection="Vertical"  Enabled="true" CssClass="radioButtonList" OnSelectedIndexChanged="onRoomSelected">
                
                   </asp:RadioButtonList>
              </div>
