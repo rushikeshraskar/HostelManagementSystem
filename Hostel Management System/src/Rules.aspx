@@ -7,8 +7,10 @@
     <title></title>
 </head>
 <body>
+    
     <h1>RULES AND REGULATIONS</h1>
     <form ID="FormView1" runat="server">
+        <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
         <div>
             <h3>
             1.Keep your room clean.<br>

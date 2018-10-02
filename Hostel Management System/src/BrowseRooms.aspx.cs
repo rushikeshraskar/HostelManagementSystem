@@ -4,9 +4,11 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Data.SqlClient;
 
 public partial class _Default : System.Web.UI.Page
 {
+    SqlConnection con;
     protected void Page_Load(object sender, EventArgs e)
     {
         RadioButtonList1.Items[0].Attributes.CssStyle.Add("margin-right", "50");
@@ -24,6 +26,20 @@ public partial class _Default : System.Web.UI.Page
         Session.Clear();
         Response.Redirect("Home.aspx");
     }
+
+    private void openConnection()
+    {
+        string ApplicationPath = AppDomain.CurrentDomain.BaseDirectory;
+        String DatabasePath = ApplicationPath + "App_Data\\Database.mdf";
+        String connectionString = "Data Source = (LocalDB)\\MSSQLLocalDB; AttachDbFilename = " + DatabasePath + "; Integrated Security = True";
+        con = new SqlConnection(connectionString);
+        con.Open();
+    }
+    private void closeConnection()
+    {
+        con.Close();
+    }
+
     protected void SubmitForm(object sender, EventArgs e)
     {
         //Response.Write("submit method called");
