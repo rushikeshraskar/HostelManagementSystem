@@ -17,7 +17,7 @@
     <img src="Images/fac6.jpg" width="500" height="400" alt="Natural" /><br>
   </marquee>
   <div align="right">
-  <br><br><br>
+      <h1>Contact Us:</h1>
  <h2>Rushikesh Raskar<br>
  Nikita Yengul</h2>
  <h3>Address: 485/B, Somnath Nagar, VadgaonSheri, Pune 411014<br><br>
