@@ -27,15 +27,6 @@
                 <asp:ListItem  Value="triple" Text="Three Sharing"/>
                     </asp:RadioButtonList>
             </div>
-             <div>    
-                Available Rooms:
-                 <asp:DropDownList ID="availableRooms" runat="server">
-                     <asp:ListItem value="1" selected="True" Text="RoomNo1"></asp:ListItem>
-                     <asp:ListItem value="2"  Text="RoomNo2"></asp:ListItem>
-                     <asp:ListItem value="3"  Text="RoomNo3"></asp:ListItem>
-                 </asp:DropDownList>
-                 <br/><br/>
-            </div>
               <div>   
                 Amount to Deposit: <br/>
                   <asp:TextBox ID="deposit" runat="server" Enabled="false"></asp:TextBox>
@@ -45,7 +36,15 @@
                   <asp:TextBox ID="rentPerM" runat="server" Enabled="false"></asp:TextBox>
                   <br/><br/>
             </div>
-           
+             <div>    
+                Available Rooms:
+                 <asp:DropDownList ID="availableRooms" runat="server">
+                     <asp:ListItem value="1" selected="True" Text="RoomNo1"></asp:ListItem>
+                     <asp:ListItem value="2"  Text="RoomNo2"></asp:ListItem>
+                     <asp:ListItem value="3"  Text="RoomNo3"></asp:ListItem>
+                 </asp:DropDownList>
+                 <br/><br/>
+            </div>
             <input type="Submit" runat="server"  name="browseRooms" value="Submit" id="browseRooms" text="browseRooms" />
         </div>
     </form>

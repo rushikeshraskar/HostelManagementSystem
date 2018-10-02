@@ -11,7 +11,7 @@
         <h1>RULES AND REGULATIONS</h1>
         <div>
             <h3>
-            1.Keep your room clean and clean.<br>
+            1.Keep your room clean.<br>
             2.Please switch off power buttons when not in use.<br>
             3.Boys are not allowed in hostel area.<br>
             4.Close Main Gate while coming or going out.<br>
