@@ -9,7 +9,7 @@
     }
     public string getDispData()
     {
-        return "Room No: "+rno + " ";
+        return "Room No = " + rno + "  Floor = " + floor+"  Vacant Beds = "+vacantBeds+ " Rent = "+rent+ " Deposit = "+deposite;
     }
     public RoomDataModel(int rno,string type, string gender, int floor, int totalBeds, int vacantBeds,float rent, float deposite)
     {

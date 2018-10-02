@@ -9,7 +9,7 @@
 </head>
 <body>
     <asp:Image ID="Image1" runat="server" ImageAlign="left"  ImageUrl="Images/user.png" Height="50" Width="50"/><br> 
-    <asp:Label ID="Label1" runat="server"></asp:Label><br>
+    <asp:Label ID="Label1" runat="server"></asp:Label><br/>
     <form id="form1" runat="server">
     <asp:Button ID="logout" runat="server" OnClick="logout_click" Text="Logout"/>
         <h1>BrowseRooms </h1>
@@ -32,18 +32,19 @@
                 <asp:ListItem  Value="triple" Text="Three Sharing"/>
                     </asp:RadioButtonList>
             </div>
-
-              <asp:RadioButtonList ID="RadioButtonList3" runat="server" RepeatDirection="Vertical"  Enabled="true">
+            <div>
+              <asp:RadioButtonList ID="RadioButtonList3" runat="server" RepeatDirection="Vertical"  Enabled="true" CssClass="radioButtonList" >
                
                   </asp:RadioButtonList>
-             
+             </div>
             <div>
                 <asp:Label ID="roomMsg" runat="server" Text="" ForeColor="Blue"></asp:Label>
                 
             </div>
+                 <asp:Button ID="Button2" runat="server" OnClick="Button2_Click" Text="Submit" />
                  <br/>
                  <br/>
-            <input type="Submit" runat="server"  name="browseRooms" value="Submit" id="browseRooms" text="browseRooms" />
+            
         </div>
     </form>
 </body>
