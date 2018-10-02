@@ -1,6 +1,6 @@
 ﻿@import url("../bootstrap/bootstrap.css");
 
-body {
+form {
     margin: auto;
     height: 700px;
     width: 600px;
@@ -26,4 +26,17 @@ body {
         display: inline;
     }
 
+
+.notificationBtn{
+    line-height: 12px;
+    width: 158px;
+    font-size: 8pt;
+    font-family: tahoma;
+    margin-top: 1px;
+    margin-right: 2px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 28px;
+}
 
