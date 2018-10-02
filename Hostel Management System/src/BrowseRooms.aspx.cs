@@ -14,6 +14,8 @@ public partial class _Default : System.Web.UI.Page
         RadioButtonList2.Items[0].Attributes.CssStyle.Add("margin-right", "50");
         RadioButtonList2.Items[1].Attributes.CssStyle.Add("margin-right", "50");
         RadioButtonList2.Items[2].Attributes.CssStyle.Add("margin-right", "50");
+
+        Label1.Text = "Hello "+Session["userName"].ToString();
         
     }
      
