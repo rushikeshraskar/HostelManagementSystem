@@ -53,6 +53,7 @@ public partial class _Default : System.Web.UI.Page
         {
             rooms.Add(new RoomDataModel(Convert.ToInt32(reader["rno"].ToString()), reader["type"].ToString(), reader["gender"].ToString(), Convert.ToInt32(reader["floor"].ToString()), Convert.ToInt32(reader["totalBeds"].ToString()),Convert.ToInt32( reader["vacantBeds"].ToString()), float.Parse(reader["rent"].ToString()), float.Parse(reader["deposit"].ToString())));
         }
+        reader.Close();
         closeConnection();
         loadDataToUI();
     }
@@ -85,10 +86,51 @@ public partial class _Default : System.Web.UI.Page
         
     }
     
+    private int getLastID()
+    {
+        int lastid = 1;
+        string sql = "select max(reqId) from Room_Request";
+        SqlCommand cmd = new SqlCommand(sql,con);
+        SqlDataReader reader = cmd.ExecuteReader();
+        if (reader.Read())
+        {
+            Int32.TryParse(reader.GetValue(0).ToString(), out lastid);
+        }
+        reader.Close();
+        return lastid;
+    }
+
+    private int getResidentId()
+    {
+        int rid = 1;
+        string sql = "select rid from Resident where uname='"+ Session["userName"].ToString() + "'";
+        SqlCommand cmd = new SqlCommand(sql, con);
+        SqlDataReader reader = cmd.ExecuteReader();
+        if (reader.Read())
+        {
+            Int32.TryParse(reader.GetValue(0).ToString(), out rid);
+        }
+        reader.Close();
+        return rid;
+    }
     protected void Button2_Click(object sender, EventArgs e)
     {
-        ScriptManager.RegisterStartupScript(this.Page, this.GetType(), "Show", "alert('" + RadioButtonList3.SelectedValue.ToString() + "');", true);
-        Response.Write("Selected " + RadioButtonList3.SelectedValue.ToString());
+        int roomno = Convert.ToInt32(RadioButtonList3.SelectedValue.ToString());
+        //save request in table
+        openConnection();
+        int NewId = getLastID()+1;
+        String sql = "insert into Room_Request(reqId,rid,rno,status) Values(@ReqId,@Rid,@Rno,@Status)";
+        SqlCommand cmd = new SqlCommand(sql, con);
+
+        cmd.Parameters.AddWithValue("@ReqId", NewId);
+        cmd.Parameters.AddWithValue("@Rid", getResidentId()); //resident id
+        cmd.Parameters.AddWithValue("@Rno", roomno);//room no
+        cmd.Parameters.AddWithValue("@Status","pending");
+
+        int recordAffected = cmd.ExecuteNonQuery();
+        ScriptManager.RegisterStartupScript(this.Page, this.GetType(), "Show", "alert('Data Saved '+"+ recordAffected + ");", true);
+        
+        closeConnection();
     }
 
     protected void Button1_Click(object sender, EventArgs e)
