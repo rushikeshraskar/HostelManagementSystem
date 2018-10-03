@@ -26,7 +26,7 @@ public partial class _Default : System.Web.UI.Page
     {
         Session.Abandon();
         Session.Clear();
-        Response.Redirect("Home.aspx");
+        Response.Redirect("/");
     }
 
     private void openConnection()

@@ -8,9 +8,15 @@
     <link href="css/RequestStatusResident.css" rel="stylesheet"/>
 </head>
 <body>
+    <asp:Image ID="Image1" runat="server" ImageAlign="left"  ImageUrl="Images/user.png" Height="50" Width="50"/><br> 
+    Hello <asp:Label ID="Label1" runat="server"></asp:Label><br/>
+
     <form id="form1" runat="server">
         <div>
             <asp:Label ID="title" runat="server" Text="Request Status Page"></asp:Label>
+            <br /><br />
+            <asp:Table ID="Table1" runat="server"></asp:Table>
+            
         </div>
     </form>
 </body>
