@@ -3,18 +3,20 @@
 
     int RequestNumber, RoomNo, VacantBeds;
     float Rent, Deposit;
+    string status;
 
     public RoomRequestResidentTblModel()
     {
 
     }
-    public RoomRequestResidentTblModel(int RequestNumber, int RoomNo, int VacantBeds,float Rent,float Deposit)
+    public RoomRequestResidentTblModel(int RequestNumber, int RoomNo, int VacantBeds,float Rent,float Deposit,string status)
     {
         this.RequestNumber= RequestNumber;
         this.RoomNo= RoomNo;
         this.VacantBeds= VacantBeds;
         this.Rent= Rent;
         this.Deposit = Deposit;
+        this.status = status;
     }
 
     public int myRequestNumber
@@ -41,5 +43,10 @@
     {
         get { return Deposit; }
         set { Deposit = value; }
+    }
+    public string myStatus
+    {
+        get { return status; }
+        set { status = value; }
     }
 }

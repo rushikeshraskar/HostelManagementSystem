@@ -26,7 +26,7 @@ public partial class src_RequestStatusResident : System.Web.UI.Page
         con.Close();
     }
     
-    string myvar = "my data";
+    
     protected void Page_Load(object sender, EventArgs e)
     {
         addRecord();
@@ -57,6 +57,10 @@ public partial class src_RequestStatusResident : System.Web.UI.Page
         c5.Text = "Vacant Beds";
         c5.CssClass = "cellHeader";
 
+        TableCell c6 = new TableCell();
+        c6.Text = "Status";
+        c6.CssClass = "cellHeader";
+
         TableRow row = new TableRow();
         
         row.Controls.Add(c1);
@@ -64,6 +68,7 @@ public partial class src_RequestStatusResident : System.Web.UI.Page
         row.Controls.Add(c3);
         row.Controls.Add(c4);
         row.Controls.Add(c5);
+        row.Controls.Add(c6);
 
         Table1.Controls.Add(row);
         //reqno rno rent deposit vacantbeds
@@ -97,6 +102,11 @@ public partial class src_RequestStatusResident : System.Web.UI.Page
             c.CssClass = "cellData";
             rowi.Controls.Add(c);
 
+            c = new TableCell();
+            c.Text = "" + item.myStatus;
+            c.CssClass = "cellData";
+            rowi.Controls.Add(c);
+
             Table1.Controls.Add(rowi);
         }
     }
@@ -106,14 +116,14 @@ public partial class src_RequestStatusResident : System.Web.UI.Page
         ArrayList tableData = new ArrayList();
         openConnection();
         string userName = Label1.Text.ToString().Trim();
-        string sql = "select Rooms.rno,Rooms.vacantBeds,Room_Request.reqId,Rooms.rent,Rooms.deposit from Room_Request,Resident,Rooms where Resident.uname='"+userName+"' and Resident.rid=Room_Request.rid and Rooms.rno=Room_Request.rno";
+        string sql = "select Rooms.rno,Rooms.vacantBeds,Room_Request.reqId,Rooms.rent,Rooms.deposit,Room_Request.status from Room_Request,Resident,Rooms where Resident.uname='" + userName+"' and Resident.rid=Room_Request.rid and Rooms.rno=Room_Request.rno";
         SqlCommand cmd = new SqlCommand(sql,con);
         SqlDataReader reader = cmd.ExecuteReader();
         //Response.Write(reader.HasRows);
         while (reader.Read())
         {
             //Response.Write("<br/> "+reader["rno"]);
-            tableData.Add(new RoomRequestResidentTblModel(Convert.ToInt32(reader["reqId"].ToString().Trim()), Convert.ToInt32(reader["rno"].ToString().Trim()), Convert.ToInt32(reader["vacantBeds"].ToString().Trim()), float.Parse( reader["rent"].ToString().Trim()), Convert.ToInt32(reader["deposit"].ToString().Trim())));
+            tableData.Add(new RoomRequestResidentTblModel(Convert.ToInt32(reader["reqId"].ToString().Trim()), Convert.ToInt32(reader["rno"].ToString().Trim()), Convert.ToInt32(reader["vacantBeds"].ToString().Trim()), float.Parse( reader["rent"].ToString().Trim()), Convert.ToInt32(reader["deposit"].ToString().Trim()), reader["status"].ToString().Trim()));
         }
         reader.Close();
         closeConnection();
