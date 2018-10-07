@@ -9,6 +9,9 @@
 </head>
 <body>
     <form id="form1" runat="server">
+        <asp:Image ID="Image1" runat="server" ImageAlign="left"  ImageUrl="Images/user.png" Height="50" Width="50"/><br> 
+    <asp:Label ID="Label1" runat="server"></asp:Label><br/>
+        <asp:Button ID="logout" runat="server" OnClick="logout_click" Text="Logout"/>
         <div>
             <h1 id="tblCaption">Room Requests</h1>
         </div>

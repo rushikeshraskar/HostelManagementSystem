@@ -20,7 +20,7 @@ public partial class src_Owner_sPage : System.Web.UI.Page
         String connectionString = "Data Source = (LocalDB)\\MSSQLLocalDB; AttachDbFilename = " + DatabasePath + "; Integrated Security = True";
         con = new SqlConnection(connectionString);
         con.Open();
-        //Label1.Text = Session["userName"].ToString();
+        Label1.Text = "Hello! "+Session["userName"].ToString();
     }
     private void closeConnection()
     {
@@ -293,5 +293,10 @@ public partial class src_Owner_sPage : System.Web.UI.Page
 
         return tableData;
     }
-
+    protected void logout_click(object sender, EventArgs e)
+    {
+        Session.Abandon();
+        Session.Clear();
+        Response.Redirect("/");
+    }
 }

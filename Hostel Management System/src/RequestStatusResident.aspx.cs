@@ -12,6 +12,13 @@ public partial class src_RequestStatusResident : System.Web.UI.Page
 {
     SqlConnection con;
 
+    protected void logout_click(object sender, EventArgs e)
+    {
+        Session.Abandon();
+        Session.Clear();
+        Response.Redirect("/");
+    }
+
     private void openConnection()
     {
         string ApplicationPath = AppDomain.CurrentDomain.BaseDirectory;

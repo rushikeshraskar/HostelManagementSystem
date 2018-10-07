@@ -25,6 +25,14 @@
     <form id="loginForm" runat="server" onsubmit="return validate(uname.value,pword.value)">
         <h1>Login Form</h1>
         <div>
+
+            <div>
+                <asp:RadioButtonList ID="loginTypeRadioList" runat="server" CssClass="radioButtonList" RepeatDirection="Horizontal" RepeatLayout="Flow" Enabled="true">
+                    <asp:ListItem  Value="Hosteller" Text="Owner"/>
+                    <asp:ListItem  Value="Resident" Selected="True" Text="Resident"/>
+                </asp:RadioButtonList>
+            </div>
+
             <div>
                 <input type="text" name="uname" id="uname" placeholder="Username" required/>
               </div>

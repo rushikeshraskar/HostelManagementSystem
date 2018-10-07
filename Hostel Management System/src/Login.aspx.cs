@@ -20,18 +20,23 @@ public partial class src_Login : System.Web.UI.Page
 
     protected void SubmitForm(object sender, EventArgs e)
     {
+        string tableName = loginTypeRadioList.SelectedValue;
+
         String uname = String.Format("{0}", Request.Form["uname"]);
         String pword = String.Format("{0}", Request.Form["pword"]);
         Session["userName"] = uname;
 
-        SqlCommand cmd = new SqlCommand("select * from Resident where uname='" + uname + "' and password='" + pword + "'", con);
+        SqlCommand cmd = new SqlCommand("select * from "+tableName.Trim()+" where uname='" + uname + "' and password='" + pword + "'", con);
 
         SqlDataReader reader = cmd.ExecuteReader();
 
         if (reader.Read())
         {
             ScriptManager.RegisterStartupScript(this.Page, this.GetType(), "Show", "alert('Login Successful');", true);
+            if(tableName.Equals("Resident"))
             Response.Redirect("BrowseRooms.aspx");
+            else
+                Response.Redirect("Owner'sPage.aspx");
         }
         else
         {
