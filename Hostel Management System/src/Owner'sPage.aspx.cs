@@ -186,7 +186,9 @@ public partial class src_Owner_sPage : System.Web.UI.Page
             Button decline = new Button();
             docs.Text = "Documents";
             approve.Text = "Approve";
+            approve.Attributes.Add("ACTION","approved");
             decline.Text = "Decline";
+            decline.Attributes.Add("ACTION", "declined");
 
             docs.ToolTip = item.myrid.ToString();
             approve.ToolTip = item.myRequestNumber.ToString();
@@ -222,14 +224,55 @@ public partial class src_Owner_sPage : System.Web.UI.Page
         /*
          update room_request table entry to approved or declined
          entry in resident_room rid and allocated room no
-         update room table decrement vacant beds
+         update rooms table decrement vacant beds
          */
+
+
         Button btn = (Button)sender;
-        int requestNo = Convert.ToInt32(btn.ToolTip);
+        int requestId = Convert.ToInt32(btn.ToolTip);
+        string action = btn.Attributes["ACTION"];
+
+        //get rid and rno
         openConnection();
-        string sql = "";
+        int rid, rno;
+        string sql = "select * from Room_Request where reqId=@ReqId";
+        SqlCommand cmd1 = new SqlCommand(sql, con);
+        cmd1.Parameters.AddWithValue("@ReqId", requestId);
+        SqlDataReader reader = cmd1.ExecuteReader();
+        reader.Read();
+        rid = Convert.ToInt32(reader["rid"].ToString());
+        rno = Convert.ToInt32(reader["rno"].ToString());
+        reader.Close();
         closeConnection();
 
+        //update room_request status
+        openConnection();
+        sql = "update Room_Request SET Room_Request.status=@Status where reqId=@ReqId";
+
+        SqlCommand cmd2 = new SqlCommand(sql,con);
+        cmd2.Parameters.AddWithValue("@Status",action);
+        cmd2.Parameters.AddWithValue("@ReqId",requestId);
+        cmd2.ExecuteNonQuery();
+        closeConnection();
+
+
+        //decrement vacant beds
+        openConnection();
+         sql = "update Rooms SET Rooms.vacantBeds=Rooms.vacantBeds-1 where Rooms.rno=@Rno";
+
+        SqlCommand cmd3 = new SqlCommand(sql, con);
+        cmd3.Parameters.AddWithValue("@Rno", rno);
+        cmd3.ExecuteNonQuery();
+        closeConnection();
+
+
+        //entry in Resident_Room
+        openConnection();
+        sql = "insert into Resident_Room(rid,rno) values(@Rid,@Rno)";
+        SqlCommand cmd4 = new SqlCommand(sql,con);
+        cmd4.Parameters.AddWithValue("@Rid",rid);
+        cmd4.Parameters.AddWithValue("@Rno", rno);
+        closeConnection();
     }
 
     private ArrayList getTableData()
@@ -243,7 +286,6 @@ public partial class src_Owner_sPage : System.Web.UI.Page
      
         while (reader.Read())
         {
-            //Response.Write("<br/> "+reader["rno"]);
             tableData.Add(new RoomRequestOwnerTblModel(Convert.ToInt32(reader["reqId"].ToString().Trim()), Convert.ToInt32(reader["rno"].ToString().Trim()), Convert.ToInt32(reader["vacantBeds"].ToString().Trim()), float.Parse(reader["rent"].ToString().Trim()), Convert.ToInt32(reader["deposit"].ToString().Trim()), reader["status"].ToString().Trim(), reader["gender"].ToString().Trim(), reader["fname"].ToString().Trim(), reader["lname"].ToString().Trim(), reader["cno"].ToString().Trim(), reader["email"].ToString().Trim(), reader["occupation"].ToString().Trim(), reader["jdate"].ToString().Trim(), reader["rid"].ToString().Trim()));
         }
         reader.Close();
