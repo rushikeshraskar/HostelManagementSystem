@@ -6,10 +6,12 @@
     background-color: #25274D;
     padding: 10px;
     text-align: center;
+    font-family: "Cambria";
 }
 input{
-    padding:10px;
+    padding:8px;
     margin-top:5px;
+    border-radius:10px;
 }
 
 .radioButtonList {
