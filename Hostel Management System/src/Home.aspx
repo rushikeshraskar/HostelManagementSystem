@@ -20,15 +20,15 @@
 <div class="slideshow-container">
 
 <div class="mySlides fade">
-  <img src="src/Images/img1.jpg" style="width:60%">
+  <img src="src/Images/img1.jpg"  height="200" width="300">
 </div>
 
 <div class="mySlides fade">
-  <img src="src/Images/img2.jpg" style="width:60%">
+  <img src="src/Images/img2.jpg" height="200" width="300">
 </div>
 
 <div class="mySlides fade">
-  <img src="src/Images/img3.jpg" style="width:60%">
+  <img src="src/Images/img3.jpg" height="200" width="300">
 </div>
 </div>
 <br>

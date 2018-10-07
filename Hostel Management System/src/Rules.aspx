@@ -4,12 +4,13 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title></title>
+    <link href="css/default.css" rel="stylesheet"/>
 </head>
 <body>
     
-    <h1>RULES AND REGULATIONS</h1>
+   
     <form ID="FormView1" runat="server">
+         <h1>RULES AND REGULATIONS</h1>
         <div>
             <h3>
             1.Keep your room clean.<br>
