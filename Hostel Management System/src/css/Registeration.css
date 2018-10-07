@@ -1,8 +1,7 @@
 ﻿@import url("../bootstrap/bootstrap.css");
 #regForm {
     margin: auto;
-    height: 700px;
-    width: 600px;
+     width: 600px;
     font-size: 20px;
     padding-left: 20px;
     font-family: "Cambria";

@@ -1,18 +1,11 @@
-﻿@import url("../bootstrap/bootstrap.css");
-
-#tblCaption {
-    padding-top:50px;
-    margin: auto;
-    font-size: 20px;
-    background-color: #fff;
-    padding-left: 20px;
-    font-family: "Cambria";
-    border-radius: 4px;
-    text-align: center;
-} 
+﻿ 
+ 
 .cellHeader ,.cellData{
     padding-right: 15px;
     padding-left: 15px;
     padding-top: 2px;
     padding-bottom: 2px;
+}
+.logoutBtn{
+    
 }

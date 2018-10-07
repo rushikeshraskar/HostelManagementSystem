@@ -1,24 +1,24 @@
-﻿@import url("../bootstrap/bootstrap.css");
+﻿
 #loginForm {
     margin: auto;
-    width: 50%;
+    width: 30%;
     color: white;
     background-color: #25274D;
     padding: 10px;
     text-align: center;
     font-family: "Cambria";
 }
-input{
-    padding:8px;
-    margin-top:5px;
-    border-radius:10px;
-}
 
-.radioButtonList {
+
+.radioButtonList{
     list-style: none;
-    margin: 0;
-    padding: 0;
+     
 }
+    .radioButtonList input[type="radio"] {
+        margin-left: 30px;
+        margin-right: 3px;
+    }
+
 
     .radioButtonList.horizontal li {
         display: inline;
