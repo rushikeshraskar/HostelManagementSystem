@@ -5,12 +5,12 @@ form {
     height: auto;
     width: auto;
     font-size: 20px;
-    background-color: #fff;
+    color: white;
+    background-color: #25274D;
     padding-left: 20px;
     font-family: "Cambria";
     border-radius: 4px;
     text-align: center;
-
 }
 .radioButtonList {
     list-style: none;

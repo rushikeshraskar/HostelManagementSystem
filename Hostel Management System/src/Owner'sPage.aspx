@@ -6,6 +6,7 @@
 <head runat="server">
     <title>Owner Home Page</title>
     <link href="css/OwnersPage.css" rel="stylesheet"/>
+    <link href="css/default.css" rel="stylesheet"/>
 </head>
 <body>
     <form id="form1" runat="server">

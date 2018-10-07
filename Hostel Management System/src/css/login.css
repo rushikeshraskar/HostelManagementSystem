@@ -1,11 +1,11 @@
 ﻿@import url("../bootstrap/bootstrap.css");
-#loginForm{
-    
-    margin:auto;
-    width:50%;
-    background-color:#00ffff;
-    padding:10px;
-    text-align:center;
+#loginForm {
+    margin: auto;
+    width: 50%;
+    color: white;
+    background-color: #25274D;
+    padding: 10px;
+    text-align: center;
 }
 input{
     padding:10px;

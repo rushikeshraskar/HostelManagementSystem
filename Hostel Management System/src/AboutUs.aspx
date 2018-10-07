@@ -4,7 +4,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title></title>
+    <link href="css/default.css" rel="stylesheet"/>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -22,7 +22,8 @@
 		<li>Washing Machine</li>
 		<li>AC</li>
 	</ul>
-</h3><br><br><br><br><br><br>
+     
+</h3>
   <marquee behavior="scroll" direction="left" >
     <img src="Images/fac1.jpg" width="400" height="300" alt="Natural" />
     <img src="Images/fac2.jpg" width="400" height="300" alt="Natural" />
@@ -31,6 +32,6 @@
     <img src="Images/fac5.jpg" width="400" height="300" alt="Natural" />
     <img src="Images/fac6.jpg" width="400" height="300" alt="Natural" />
   </marquee>
-    </form>
+   </form>
 </body>
 </html>
