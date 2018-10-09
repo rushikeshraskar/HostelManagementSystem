@@ -35,13 +35,14 @@
       <a class="navbar-brand active" href="/">Hostel Management System</a>
     </div>
     <ul class="nav navbar-nav">
-      <li><a href="src/ContactUs.aspx">Contact Us</a></li>
-      <li><a href="src/AboutUs.aspx">About Us</a></li>
+      <li><a href="ContactUs.aspx">Contact Us</a></li>
+      <li><a href="AboutUs.aspx">About Us</a></li>
+            <li><a href="Rules.aspx">Rules</a></li>
     </ul> 
 
         <ul class="nav navbar-nav navbar-right">
-      <li><a href="src/Registeration.aspx"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-      <li><a href="src/Login.aspx"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+      <li><a href="Registeration.aspx"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+      <li><a href="Login.aspx"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
     </ul>
 
   </div>

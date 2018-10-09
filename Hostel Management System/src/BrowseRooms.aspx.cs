@@ -18,9 +18,9 @@ public partial class _Default : System.Web.UI.Page
         RadioButtonList2.Items[1].Attributes.CssStyle.Add("margin-right", "50");
         RadioButtonList2.Items[2].Attributes.CssStyle.Add("margin-right", "50");
 
-        Label1.Text = "Hello "+Session["userName"].ToString();
+        Label1.Text = "Hello "+Session["userName"].ToString().Trim();
 
-    //    getDataFromDB();
+        getDataFromDB();
     }
      protected void logout_click(object sender, EventArgs e)
     {
@@ -63,13 +63,14 @@ public partial class _Default : System.Web.UI.Page
         {
             ListItem dummy = new ListItem(items.getDispData(), items.myrno.ToString());
             RadioButtonList3.Items.Add(dummy);
+            
         }
+        
+
         RadioButtonList3.SelectedIndex = 0;
     }
     protected void SubmitForm(object sender, EventArgs e)
-    {
-        //Response.Write("submit method called");
-        //getDataFromDB();
+    { 
     }
     protected void onGenderTypeChanged(object sender, EventArgs e)
     {
@@ -128,9 +129,11 @@ public partial class _Default : System.Web.UI.Page
         cmd.Parameters.AddWithValue("@Status","pending");
 
         int recordAffected = cmd.ExecuteNonQuery();
-        ScriptManager.RegisterStartupScript(this.Page, this.GetType(), "Show", "alert('Data Saved '+"+ recordAffected + ");", true);
-        
+        ScriptManager.RegisterStartupScript(this.Page, this.GetType(), "Show", "alert('Room Booking Request Sent !');", true);
+
+        RadioButtonList3.Items.Clear();
         closeConnection();
+        
     }
 
     protected void Button1_Click(object sender, EventArgs e)

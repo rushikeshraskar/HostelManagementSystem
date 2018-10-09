@@ -5,8 +5,15 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title>Visitor Registeration</title>
-    <script src="bootstrap/bootstrap.js"></script>
-    <link href="css/registeration.css" rel="stylesheet"/>
+    
+    <link rel="stylesheet" href="bootstrap/bootstrap.css"/>
+  <script src="script/jquery.min.js"></script>
+  <script src="bootstrap/bootstrap.js"></script>
+    <link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css" rel="stylesheet"/>
+
+     <link href="css/default.css" rel="stylesheet"/>
+
+    <link href="css/Registeration.css" rel="stylesheet"/>
     <script>
         function validate(fname, lname, cno, email, occupation, dob, addr, uname, pword, repword, jdate) {
             if (pword != repword) {
@@ -28,6 +35,26 @@
 </head>
 <body>
     
+    <nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand active" href="/">Hostel Management System</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li><a href="ContactUs.aspx">Contact Us</a></li>
+      <li><a href="AboutUs.aspx">About Us</a></li>
+        <li><a href="Rules.aspx">Rules</a></li>
+    </ul> 
+
+        <ul class="nav navbar-nav navbar-right">
+      <li><a href="Registeration.aspx"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+      <li><a href="Login.aspx"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+    </ul>
+
+  </div>
+</nav>
+     
+    <br/>
     <form id="regForm" runat="server" onsubmit="return validate(fname.value,lname.value,cno.value,email.value,occupation.value,dob.value,addr.value,uname.value,pword.value,repword.value,jdate.value">
     <h1>Registeration Form</h1>    
         <div>
@@ -73,12 +100,17 @@
             <asp:FileUpload ID="pan" runat="server" />
             </div>
             <div>
-            I-Card
-           
+                <span>
+                   I-Card
                 <asp:FileUpload ID="icard" runat="server" />
+                    </span>
             </div>
-            <asp:button type="Submit" runat="server" onclick="SubmitForm"  name="register" id="register" text="Register" />
+                <div>
+                    <asp:button type="Submit" runat="server" onclick="SubmitForm"  name="register" id="register" text="Register" class="btn btn-success"/>
+                    <input type="reset"class="btn btn-success" id="resetBtn"/>
+                </div>
         </div>
     </form>
+    <br />
 </body>
 </html>

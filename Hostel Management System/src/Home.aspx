@@ -11,6 +11,7 @@
   <script src="script/jquery.min.js"></script>
   <script src="bootstrap/bootstrap.js"></script>
     <link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css" rel="stylesheet"/>
+
     <link href="css/default.css" rel="stylesheet"/>
 
     <title>Hostel Management System</title>
@@ -26,6 +27,7 @@
     <ul class="nav navbar-nav">
       <li><a href="src/ContactUs.aspx">Contact Us</a></li>
       <li><a href="src/AboutUs.aspx">About Us</a></li>
+        <li><a href="src/Rules.aspx">Rules</a></li>
     </ul> 
 
         <ul class="nav navbar-nav navbar-right">
@@ -39,7 +41,7 @@
     <br/>
 
 
-    <form id="form1" runat="server">
+    <form id="myForm" runat="server">
         <div>
             <h1>Your Comfort is Our Highest Priority</h1>
         </div>

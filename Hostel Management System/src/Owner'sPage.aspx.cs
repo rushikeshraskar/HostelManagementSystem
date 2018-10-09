@@ -196,7 +196,7 @@ public partial class src_Owner_sPage : System.Web.UI.Page
 
             docs.Click += new EventHandler(docBtn_click);
             approve.Click+= new EventHandler(btn_click);
-            decline.Click += new EventHandler(btn_click);
+            decline.Click += new EventHandler(btn_click_declined);
 
             c = new TableCell();
             c.Controls.Add(docs);
@@ -274,6 +274,22 @@ public partial class src_Owner_sPage : System.Web.UI.Page
         cmd4.Parameters.AddWithValue("@Rno", rno);
         closeConnection();
     }
+
+
+    protected void btn_click_declined(object sender, EventArgs e)
+    {
+        /*
+         change request status to declined
+         */
+        Button btn = (Button)sender;
+        int requestId = Convert.ToInt32(btn.ToolTip); 
+        openConnection();
+        String sql = "update Room_Request SET status='declined' where reqId=@ReqId";
+        SqlCommand cmd = new SqlCommand(sql,con);
+        cmd.Parameters.AddWithValue("@ReqId", requestId);
+        closeConnection();
+    }
+
 
     private ArrayList getTableData()
     {
