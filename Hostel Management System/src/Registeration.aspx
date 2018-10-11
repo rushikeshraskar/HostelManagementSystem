@@ -65,7 +65,7 @@
                 Last Name*<input type="text" id="lname" name="lname"required="required"/>
             </div>
             <div>
-                Contact Number*<input type="number" id="cno" name="cno"  required="required" pattern="[0-9]{10}"/>
+                Contact Number*<input type="tel" id="cno" name="cno"  required="required"  pattern="^\d{10}$"/>
             </div>
             <div>
                 Email-id<input type="email" id="email" name="email" />

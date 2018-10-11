@@ -1,6 +1,4 @@
-﻿#form1{
-   padding-left:100px;
-}
+﻿
 .img {
     margin: auto; 
     font-size: 20px;
@@ -11,4 +9,10 @@
     text-align: center;
     border: 10px solid black;
     border-radius: 100px;
+}
+.mainContent {
+    color: #ff6a00;
+    font-weight: bold;
+    font-size: 22px; 
+    padding-left: 100px;
 }

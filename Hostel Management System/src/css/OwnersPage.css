@@ -1,11 +1,24 @@
-﻿ 
- 
-.cellHeader ,.cellData{
+﻿
+.dispTbl{
+    color:#4cff00;
+    font-size:18px;
+    font-weight:bold;
+}
+.cellHeader, .cellData {
     padding-right: 15px;
     padding-left: 15px;
     padding-top: 2px;
     padding-bottom: 2px;
+    align-content: center;
+    align-items: center;
+    margin: auto;
+    background-color: black;
+    color: white;
 }
-.logoutBtn{
-    
+    .logoutBtn {
+    }
+
+.cellData {
+    background-color: white;
+    color: #ff6a00;
 }

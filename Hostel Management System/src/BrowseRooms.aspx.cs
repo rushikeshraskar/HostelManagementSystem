@@ -20,7 +20,7 @@ public partial class _Default : System.Web.UI.Page
 
         Label1.Text = "Hello "+Session["userName"].ToString().Trim();
 
-        getDataFromDB();
+        //getDataFromDB();
     }
      protected void logout_click(object sender, EventArgs e)
     {
@@ -129,9 +129,9 @@ public partial class _Default : System.Web.UI.Page
         cmd.Parameters.AddWithValue("@Status","pending");
 
         int recordAffected = cmd.ExecuteNonQuery();
-        ScriptManager.RegisterStartupScript(this.Page, this.GetType(), "Show", "alert('Room Booking Request Sent !');", true);
+        ScriptManager.RegisterStartupScript(this.Page, this.GetType(), "Show", "alert('Room Booking Request Sent"+roomno+" !');", true);
 
-        RadioButtonList3.Items.Clear();
+        //RadioButtonList3.Items.Clear();
         closeConnection();
         
     }

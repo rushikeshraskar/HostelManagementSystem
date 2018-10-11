@@ -20,7 +20,7 @@ public partial class src_Owner_sPage : System.Web.UI.Page
         String connectionString = "Data Source = (LocalDB)\\MSSQLLocalDB; AttachDbFilename = " + DatabasePath + "; Integrated Security = True";
         con = new SqlConnection(connectionString);
         con.Open();
-        Label1.Text = "Hello! "+Session["userName"].ToString();
+        LinkButton1.Text = "Hello! "+Session["userName"].ToString();
     }
     private void closeConnection()
     {
@@ -197,6 +197,10 @@ public partial class src_Owner_sPage : System.Web.UI.Page
             docs.Click += new EventHandler(docBtn_click);
             approve.Click+= new EventHandler(btn_click);
             decline.Click += new EventHandler(btn_click_declined);
+
+            approve.CssClass = "btn btn-success";
+            decline.CssClass = "btn btn-warning";
+            docs.CssClass = "btn btn-info";
 
             c = new TableCell();
             c.Controls.Add(docs);

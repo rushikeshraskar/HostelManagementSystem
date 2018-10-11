@@ -71,7 +71,8 @@
             <a href="Registeration.aspx">Create Account</a>
             <div>
                  <br />
-            <asp:LinkButton type="Submit" CssClass="btn btn-success" runat="server" onclick="SubmitForm"  name="Login" id="Login" text="Login" />
+                <asp:LinkButton type="Submit" CssClass="btn btn-success" runat="server" onclick="SubmitForm"  name="Login" id="Login" text="Login" />
+                <input type="reset"class="btn btn-success" id="resetBtn"/>
                 </div>
             <br />
         </div>
